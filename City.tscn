@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://City.gd" type="Script" id=1]
+[ext_resource path="res://sprites/city.png" type="Texture" id=2]
+
+[node name="City" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="city" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="city2" type="Sprite" parent="."]
+position = Vector2( -90.8828, 497.465 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="city3" type="Sprite" parent="."]
+position = Vector2( 564.431, 0 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="city4" type="Sprite" parent="."]
+position = Vector2( 492.682, 483.115 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="city5" type="Sprite" parent="."]
+position = Vector2( 339.615, -497.465 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="city6" type="Sprite" parent="."]
+position = Vector2( 153.066, 990.146 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="SpawnPosition" type="Position2D" parent="."]
+position = Vector2( -379.374, 206.424 )

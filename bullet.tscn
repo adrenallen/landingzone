@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://bullet.gd" type="Script" id=1]
+[ext_resource path="res://bullet.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "bullet anim"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("bullet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 4.57518, 4.11567 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+SPEED = 900
+
+[node name="bullet" type="Sprite" parent="."]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+hframes = 3
+frame = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "bullet anim"
+"anims/bullet anim" = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 15.0803, 0 )
+shape = SubResource( 2 )
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

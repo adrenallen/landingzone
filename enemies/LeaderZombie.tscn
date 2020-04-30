@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://enemies/Zombie.tscn" type="PackedScene" id=1]
+
+[node name="Leader" instance=ExtResource( 1 )]
+max_health = 150
+attack_damage = 7
+is_nav_group_leader = true
+
+[node name="HandSpriteR" parent="Hands" index="0"]
+modulate = Color( 0.141176, 0.556863, 0.145098, 1 )
+
+[node name="HandSpriteL" parent="Hands" index="1"]
+modulate = Color( 0.141176, 0.556863, 0.145098, 1 )
+
+[node name="BodySprite" parent="." index="2"]
+modulate = Color( 0.141176, 0.556863, 0.145098, 1 )
